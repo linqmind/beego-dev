@@ -1,5 +1,5 @@
 #!/bin/sh
-sed -e
+set -e
 
 USER=${USER:-"root"}
 PASSWD=${PASSWD:-"root"}

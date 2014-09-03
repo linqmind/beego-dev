@@ -11,6 +11,8 @@ RUN apt-get update
 
 RUN apt-get install git openssh-server vim ssh telnet zsh tmux -y
 
+RUN mkdir /var/run/sshd -p
+
 RUN mkdir /root/repos -p
 
 WORKDIR /root/repos

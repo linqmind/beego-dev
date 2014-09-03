@@ -7,7 +7,7 @@ MAINTAINER net.cloudcube, cloudcube@outlook.com
 
 RUN apt-get update  
 
-RUN apt-get install git ssh-server vim ssh telnet zsh tmux -y
+RUN apt-get install git openssh-server vim ssh telnet zsh tmux -y
 
 RUN mkdir /root/repos -p
 

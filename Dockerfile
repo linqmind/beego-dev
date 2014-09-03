@@ -5,6 +5,8 @@ FROM cloudcube/beego
 
 MAINTAINER net.cloudcube, cloudcube@outlook.com
 
+USER root
+
 RUN apt-get update  
 
 RUN apt-get install git openssh-server vim ssh telnet zsh tmux -y
@@ -16,9 +18,9 @@ WORKDIR /root/repos
 # Clone Develop Tool Vim for golang
 RUN git clone https://github.com/haibinpark/gorc.git devrc
 
-WORKDIR /root/repos/vim
+WORKDIR /root/repos/devrc
 
-RUN git checkout -b gorc origin/gorc
+RUN git checkout -b golang origin/golang
 
 RUN git submodule update --init --recursive
 

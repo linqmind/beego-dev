@@ -15,6 +15,8 @@ RUN apt-get install git openssh-server vim ssh telnet zsh tmux -y
 
 RUN chsh -s /usr/bin/zsh
 
+RUN echo "export LC_ALL=C" >> /root/.bashrc
+
 # Install Supervisor.
 RUN \
    apt-get install -y supervisor && \

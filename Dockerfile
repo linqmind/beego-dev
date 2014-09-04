@@ -11,7 +11,18 @@ RUN apt-get update
 
 RUN apt-get install git openssh-server vim ssh telnet zsh tmux -y
 
-RUN mkdir /var/run/sshd -p
+# Install Supervisor.
+RUN \
+   apt-get install -y supervisor && \
+     sed -i 's/^\(\[supervisord\]\)$/\1\nnodaemon=true/' /etc/supervisor/supervisord.conf
+
+ADD adds/authorized_keys /authorized_keys
+
+ADD config/config.sh /config.sh
+
+RUN bin/bash /config.sh && rm /config.sh
+
+ADD config/sshd.conf /etc/supervisor/conf.d/sshd.conf
 
 RUN mkdir /root/repos -p
 
@@ -47,9 +58,8 @@ ADD run.sh /usr/local/bin/run
 
 RUN chmod +x /usr/local/bin/run
 
-RUN echo 'root:123456'|chpasswd
-
 EXPOSE 22
 
-CMD ["/usr/local/bin/run"]
-
+# CMD ["/usr/local/bin/run"]
+USER root
+CMD ["supervisord", "-c", "/etc/supervisor/supervisord.conf"]

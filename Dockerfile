@@ -5,11 +5,15 @@ FROM cloudcube/beego
 
 MAINTAINER net.cloudcube, cloudcube@outlook.com
 
+ENV REFERESH_AT 2014-09-04
+
 USER root
 
 RUN apt-get update  
 
 RUN apt-get install git openssh-server vim ssh telnet zsh tmux -y
+
+RUN chsh -s /usr/bin/zsh
 
 # Install Supervisor.
 RUN \
@@ -62,4 +66,5 @@ EXPOSE 22
 
 # CMD ["/usr/local/bin/run"]
 USER root
+
 CMD ["supervisord", "-c", "/etc/supervisor/supervisord.conf"]

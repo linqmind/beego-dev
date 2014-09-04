@@ -47,6 +47,8 @@ ADD run.sh /usr/local/bin/run
 
 RUN chmod +x /usr/local/bin/run
 
+RUN echo 'root:123456'|chpasswd
+
 EXPOSE 22
 
 CMD ["/usr/local/bin/run"]

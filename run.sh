@@ -8,6 +8,7 @@ echo $USER
 
 echo $PASSWD
 
-echo $USER:$PASSWD |chpasswd
+# exec echo 'root:123456' | chpasswd
+# exec echo "root:123456" |chpasswd
 
 exec /usr/sbin/sshd -D

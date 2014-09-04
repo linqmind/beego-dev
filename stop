@@ -1,0 +1,2 @@
+#!/bin/bash
+docker stop test_sshd|docker rm test_sshd|docker rmi cloudcube/beego-dev

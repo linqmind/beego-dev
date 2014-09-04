@@ -1,0 +1,2 @@
+#!/bin/bash
+docker run -p 2222:22 -d --name test_sshd cloudcube/beego-dev

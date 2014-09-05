@@ -13,9 +13,9 @@ RUN apt-get update
 
 RUN apt-get install git openssh-server vim ssh telnet zsh tmux -y
 
-RUN chsh -s /usr/bin/zsh
-
 RUN echo "export LC_ALL=C" >> /root/.bashrc
+
+RUN chsh -s /usr/bin/zsh
 
 # Install Supervisor.
 RUN \
@@ -48,6 +48,13 @@ RUN git submodule foreach git pull origin master
 RUN sh install-gorc.sh
 
 # Install go plugin
+WORKDIR /root
+
+RUN mkdir projs/dep/go -p
+
+RUN mkdir projs/go -p
+
+ENV GOPATH=/root/projs/dep/go
 
 RUN go get -u github.com/jstemmer/gotags
 
@@ -57,9 +64,8 @@ RUN go get -u code.google.com/p/rog-go/exp/cmd/godef
 
 RUN go get -u github.com/bradfitz/goimports
 
-WORKDIR /root
-
 # Add run script 
+
 ADD run.sh /usr/local/bin/run
 
 RUN chmod +x /usr/local/bin/run
@@ -67,6 +73,5 @@ RUN chmod +x /usr/local/bin/run
 EXPOSE 22
 
 # CMD ["/usr/local/bin/run"]
-USER root
 
 CMD ["supervisord", "-c", "/etc/supervisor/supervisord.conf"]

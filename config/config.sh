@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/zsh
 
 mkdir /var/run/sshd
 mkdir -p /root/.ssh

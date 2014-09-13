@@ -72,6 +72,6 @@ RUN chmod +x /usr/local/bin/run
 
 EXPOSE 22
 
-# CMD ["/usr/local/bin/run"]
+CMD ["/bin/zsh","/usr/local/bin/run"]
 
-CMD ["supervisord", "-c", "/etc/supervisor/supervisord.conf"]
+# CMD ["supervisord", "-c", "/etc/supervisor/supervisord.conf"]

@@ -60,6 +60,8 @@ RUN go get -u github.com/nsf/gocode
 
 RUN go get -u code.google.com/p/rog-go/exp/cmd/godef
 
+RUN go get code.google.com/p/go.tools/cmd/goimports
+
 # RUN go get -u github.com/bradfitz/goimports
 
 # ENV GOPATH /root/projs/go:$GOPATH

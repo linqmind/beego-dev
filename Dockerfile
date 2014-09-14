@@ -64,7 +64,7 @@ RUN go get -u code.google.com/p/go.tools/cmd/goimports
 
 # Add run script 
 #
-ENV PATH ~/.bin:$PATH
+ENV PATH /root/.bin:$PATH
 
 ADD run.sh /usr/local/bin/run
 

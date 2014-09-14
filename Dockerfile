@@ -54,6 +54,10 @@ RUN mkdir projs/dep/go -p
 
 RUN mkdir projs/go -p
 
+ENV GOPATH /root/projs/dep/go:$GOPATH
+
+RUN echo $GOPATH
+
 RUN go get -u github.com/jstemmer/gotags
 
 RUN go get -u github.com/nsf/gocode

@@ -3,13 +3,9 @@ set -e
 
 #USER=${USER:-"root"}
 #PASSWD=${PASSWD:-"root"}
+chmod u+x /root/repos/install-gorc.sh
 
-#echo $USER
+exec sh /root/repos/install-gorc.sh
 
-#echo $PASSWD
 
-# exec echo 'root:123456' | chpasswd
-# exec echo "root:123456" |chpasswd
-
-#exec /usr/sbin/sshd -D
 exec supervisord -c /etc/supervisor/supervisord.conf

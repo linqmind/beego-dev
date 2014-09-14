@@ -62,9 +62,13 @@ RUN go get -u code.google.com/p/rog-go/exp/cmd/godef
 
 RUN go get code.google.com/p/go.tools/cmd/goimports
 
+RUN echo $GOPATH
+
 # RUN go get -u github.com/bradfitz/goimports
 
-# ENV GOPATH /root/projs/go:$GOPATH
+ENV GOPATH /root/projs/go:$GOPATH
+
+RUN echo $GOPATH
 
 # Add run script 
 

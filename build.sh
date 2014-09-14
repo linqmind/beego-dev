@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t cloudcube/beego .
+docker build -t cloudcube/beego-dev .

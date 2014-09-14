@@ -26,7 +26,9 @@ ADD adds/authorized_keys /authorized_keys
 
 ADD config/config.sh /config.sh
 
-RUN bin/bash /config.sh && rm /config.sh
+RUN chmod u+x /config.sh
+
+RUN sh /config.sh && rm /config.sh
 
 ADD config/sshd.conf /etc/supervisor/conf.d/sshd.conf
 
@@ -45,7 +47,9 @@ RUN git submodule update --init --recursive
 
 RUN git submodule foreach git pull origin master
 
-RUN sh install-gorc.sh
+# RUN chmod u+x install-gorc.sh
+
+# RUN sh install-gorc.sh
 
 # Install go plugin
 WORKDIR /root
@@ -65,10 +69,6 @@ RUN go get -u github.com/nsf/gocode
 RUN go get -u code.google.com/p/rog-go/exp/cmd/godef
 
 RUN go get code.google.com/p/go.tools/cmd/goimports
-
-RUN echo $GOPATH
-
-# RUN go get -u github.com/bradfitz/goimports
 
 ENV GOPATH /root/projs/go:$GOPATH
 

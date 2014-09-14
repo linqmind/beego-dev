@@ -63,6 +63,8 @@ RUN go get -u code.google.com/p/rog-go/exp/cmd/godef
 RUN go get -u code.google.com/p/go.tools/cmd/goimports
 
 # Add run script 
+#
+ENV PATH ~/.bin:$PATH
 
 ADD run.sh /usr/local/bin/run
 

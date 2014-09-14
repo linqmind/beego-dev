@@ -47,20 +47,12 @@ RUN git submodule update --init --recursive
 
 RUN git submodule foreach git pull origin master
 
-# RUN chmod u+x install-gorc.sh
-
-# RUN sh install-gorc.sh
-
 # Install go plugin
 WORKDIR /root
 
-RUN mkdir projs/dep/go -p
+RUN mkdir tools/go -p
 
-RUN mkdir projs/go -p
-
-ENV GOPATH /root/projs/dep/go:$GOPATH
-
-RUN echo $GOPATH
+ENV GOPATH /root/tools/go:$GOPATH
 
 RUN go get -u github.com/jstemmer/gotags
 
@@ -68,11 +60,7 @@ RUN go get -u github.com/nsf/gocode
 
 RUN go get -u code.google.com/p/rog-go/exp/cmd/godef
 
-RUN go get code.google.com/p/go.tools/cmd/goimports
-
-ENV GOPATH /root/projs/go:$GOPATH
-
-RUN echo $GOPATH
+RUN go get -u code.google.com/p/go.tools/cmd/goimports
 
 # Add run script 
 
@@ -80,8 +68,10 @@ ADD run.sh /usr/local/bin/run
 
 RUN chmod +x /usr/local/bin/run
 
+RUN mkdir -p /root/projs
+
+VOLUME ["/root/projs"]
+
 EXPOSE 22
 
 CMD ["/bin/zsh","/usr/local/bin/run"]
-
-# CMD ["supervisord", "-c", "/etc/supervisor/supervisord.conf"]

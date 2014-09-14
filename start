@@ -1,2 +1,2 @@
 #!/bin/bash
-docker run -p 2222:22 -d --name test_sshd cloudcube/beego-dev
+docker run -p 2222:22 -P --volumes-from ~/data  -d --name beego-dev cloudcube/beego-dev

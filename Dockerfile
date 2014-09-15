@@ -74,6 +74,6 @@ RUN mkdir -p /root/projs
 
 VOLUME ["/root/projs"]
 
-EXPOSE 22
+EXPOSE 22 8080
 
 CMD ["/bin/zsh","/usr/local/bin/run"]

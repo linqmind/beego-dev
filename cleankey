@@ -1,2 +1,2 @@
 #!/bin/sh
-sudo ssh-keygen -f "/root/.ssh/known_hosts" -R [localhost]:2222
+sudo ssh-keygen -f "/home/hipin/.ssh/known_hosts" -R [localhost]:2222

@@ -1,2 +1,2 @@
 #!/bin/bash
-docker stop beego-dev|docker rm beego-dev|docker rmi cloudcube/beego-dev
+sudo docker stop beego-dev|sudo docker rm beego-dev|sudo docker rmi cloudcube/beego-dev

@@ -1,2 +1,2 @@
 #!/bin/bash
-docker run -p 2222:22 -P -v ~/data:/root/projs  -d --name beego-dev cloudcube/beego-dev
+sudo docker run -p 2222:22 -P -v ~/data:/root/projs  -d --name beego-dev cloudcube/beego-dev

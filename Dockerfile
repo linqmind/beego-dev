@@ -62,6 +62,14 @@ RUN go get -u code.google.com/p/rog-go/exp/cmd/godef
 
 RUN go get -u code.google.com/p/go.tools/cmd/goimports
 
+# Add proj tmpl files
+
+RUN mkdir /beego-dev/tmp -p
+
+ADD projtmpl/env.sh /beego-dev/tmp/env.sh
+
+ADD projtmpl/link.sh /beego-dev/tmp/link.sh
+
 # Add run script 
 #
 ENV PATH /root/.bin:$PATH

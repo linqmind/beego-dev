@@ -5,7 +5,7 @@ PROJ_NAME=${PROJ_NAME:-"demo"}
 
 echo $PROJ_NAME
 
-if [ ! -d $PROJ_NAME ] ;
+if [ ! -d $PROJ_NAME ] ;then
    mkdir $PROJ_NAME -p
 fi
 

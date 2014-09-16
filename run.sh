@@ -5,8 +5,8 @@ PROJ_NAME=${PROJ_NAME:-"demo"}
 
 echo $PROJ_NAME
 
-if [ ! -d $PROJ_NAME ];
-   mkdir $PROJ_NAME
+if [ ! -d $PROJ_NAME ] ;
+   mkdir $PROJ_NAME -p
 fi
 
 mv /beego-dev/tmp/env.sh $PROJ_NAME/

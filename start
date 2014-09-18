@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo docker run -p 2222:22 --name vshophub_dev -p 8080:8080 -P -v ~/data:/root/projs -e PROJ_NAME=vshophub -d cloudcube/beego-dev
+sudo docker run -p 2222:22 --name vshophub_dev -p 8080:8080 -P -v ~/data:/root/projs -e PROJ_NAME=vshophub -d --link vshophub_db:db  cloudcube/beego-dev

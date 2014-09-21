@@ -9,6 +9,8 @@ if [ ! -d $PROJ_NAME ] ;then
    mkdir $PROJ_NAME -p
 fi
 
+sudo chsh -s /usr/bin/zsh
+
 mv /beego-dev/tmp/env.sh $PROJ_NAME/
 
 mv /beego-dev/tmp/link.sh $PROJ_NAME/

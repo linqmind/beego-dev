@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 set -e
 
 PROJ_NAME=${PROJ_NAME:-"demo"}

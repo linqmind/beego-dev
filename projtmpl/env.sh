@@ -9,5 +9,5 @@ if [ ! -d proj ]; then
     mkdir proj
 fi
 PROJ=`pwd`/proj
-GOPATH=$PROJ:$TOOLSPATH:$GOPATH
+GOPATH=$PROJ:$TOOLSPATH:/gopath:$GOPATH
 PATH=${GOPATH//://bin:}/bin:~/.bin:$PATH

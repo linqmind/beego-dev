@@ -86,4 +86,4 @@ WORKDIR /root/projs
 
 EXPOSE 22 8080
 
-CMD ["/bin/zsh","/usr/local/bin/run"]
+CMD ["/bin/bash","/usr/local/bin/run"]

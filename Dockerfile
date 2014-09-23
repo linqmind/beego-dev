@@ -13,9 +13,9 @@ RUN apt-get update
 
 RUN apt-get install git openssh-server vim ssh telnet zsh tmux -y
 
-# RUN echo "export LC_ALL=C" >> /root/.bashrc
+RUN echo "export LC_ALL=C" >> /root/.bashrc
 
-# RUN chsh -s /usr/bin/zsh
+RUN chsh -s /usr/bin/zsh
 
 # Install Supervisor.
 RUN \
@@ -86,4 +86,4 @@ WORKDIR /root/projs
 
 EXPOSE 22 8080
 
-CMD ["/bin/bash","/usr/local/bin/run"]
+CMD ["/bin/zsh","/usr/local/bin/run"]

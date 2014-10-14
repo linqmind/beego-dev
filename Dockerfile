@@ -5,7 +5,7 @@ FROM quay.io/cloudcube/beego
 
 MAINTAINER net.cloudcube, cloudcube@outlook.com
 
-ENV REFERESH_AT 2014-09-28 07:46
+ENV REFRESHED_AT 2014-09-28 07:46
 
 USER root
 
@@ -48,11 +48,11 @@ RUN git submodule update --init --recursive
 RUN git submodule foreach git pull origin master
 
 # Install go plugin
-WORKDIR /root
+WORKDIR /gopath
 
-RUN mkdir tools/go -p
+# RUN mkdir tools/go -p
 
-ENV GOPATH /root/tools/go:$GOPATH
+ENV GOPATH /gopath:$GOPATH
 
 RUN go get -u github.com/jstemmer/gotags
 

@@ -5,7 +5,7 @@ FROM quay.io/cloudcube/beego
 
 MAINTAINER net.cloudcube, cloudcube@outlook.com
 
-ENV REFRESHED_AT 2014-10-15 07:37
+ENV REFRESHED_AT 2014-10-16 07:44
 
 USER root
 

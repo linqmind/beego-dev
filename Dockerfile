@@ -1,11 +1,11 @@
 # Develop Go application on Beego Framework
 # version 1.0
 
-FROM quay.io/cloudcube/beego
+FROM cloudcube/beego
 
 MAINTAINER net.cloudcube, cloudcube@outlook.com
 
-ENV REFRESHED_AT 2014-10-16 07:44
+ENV REFRESHED_AT 2014-10-16 23:40
 
 USER root
 

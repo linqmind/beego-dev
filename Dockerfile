@@ -3,9 +3,9 @@
 
 FROM cloudcube/beego
 
-MAINTAINER net.cloudcube, cloudcube@outlook.com
+MAINTAINER HipinZhao "cloudcube@outlook.com"
 
-ENV REFRESHED_AT 2014-10-16 23:40
+ENV REFRESHED_AT 2015-1-7 22:30
 
 USER root
 

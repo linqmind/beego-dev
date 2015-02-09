@@ -5,13 +5,13 @@ FROM cloudcube/beego
 
 MAINTAINER HipinZhao "cloudcube@outlook.com"
 
-ENV REFRESHED_AT 2015-1-7 22:30
+ENV REFRESHED_AT 2015-2-9 20:56
 
 USER root
 
 RUN apt-get update  
 
-RUN apt-get install git openssh-server vim ssh telnet zsh tmux -y
+RUN apt-get install git openssh-server vim ssh telnet zsh tmux libc6 -y
 
 RUN echo "export LC_ALL=C" >> /root/.bashrc
 

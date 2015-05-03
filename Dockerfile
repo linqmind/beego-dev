@@ -5,7 +5,7 @@ FROM cloudcube/beego
 
 MAINTAINER HipinZhao "cloudcube@outlook.com"
 
-ENV REFRESHED_AT 2015-2-9 20:56
+ENV REFRESHED_AT 2015-5-3 21:57
 
 USER root
 

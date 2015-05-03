@@ -1,2 +1,2 @@
 #!/bin/bash
-docker run -p 2222:22 --name beego-dev -p 8080:8080 -P -v /home/core/data/projs:/root/projs -e PROJ_NAME=demo -d --link postgresql:db  quay.io/cloudcube/beego-dev
+docker run -p 2222:22 --name beego-dev -p 8080:8080 -P -v /home/core/data/projs:/root/projs -e PROJ_NAME=demo -d --link postgresql:db  cloudcube/beego-dev

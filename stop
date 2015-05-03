@@ -1,2 +1,3 @@
 #!/bin/bash
 sudo docker stop beego-dev|sudo docker rm beego-dev|sudo docker rmi cloudcube/beego-dev
+sudo docker stop postgresql | sudo docker rm postgresql | sudo docker rmi cloudcube/postgresql
